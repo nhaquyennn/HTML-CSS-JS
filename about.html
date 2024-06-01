@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(assets/images/menu-bg.png);">
+    <!-- start of header  -->
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="logo.png" width="160" height="36" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="main-navigation">
+                        <button class="menu-toggle"><span></span><span></span></button>
+                        <nav class="header-menu">
+                            <ul class="menu food-nav-menu">
+                                <li><a href="../WEBLON/index2.html">Trang chủ</a></li>
+                                <li><a href="../WEBLON/about.html">Giới thiệu</a></li>
+                                <li><a href="../WEBLON/index3.html">Menu</a></li>
+                                <li><a href="../WEBLON/gallery.html">Bộ sưu tập</a></li>
+                                <li><a href="../WEBLON/blog.html">Blog</a></li>
+                                <li><a href="../WEBLON/contact.html">Liên hệ</a></li>
+                                <li><a href="../WEBLON/members.html">Members</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-right">
+                            <form action="#" class="header-search-form for-des">
+                                <input type="search" class="form-input" placeholder="Tìm kiếm...">
+                                <button type="submit">
+                                    <i class="uil uil-search"></i>
+                                </button>
+                            </form>
+                            <a href="../WEBLON/index4.html" class="header-btn header-cart">
+                                <i class="uil uil-shopping-bag"></i>
+                                <span class="cart-number">0</span>
+                            </a>
+                            <a href="javascript:void(0)" class="header-btn">
+                                <i class="uil uil-user-md" data-toggle="modal" data-target="#myModal"></i>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="modal fade login mt-5 " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content ">
+                <div class="cart_box" style="width: 100%;margin: auto;">
+                    <div class="login_img_box float-left" style="width: 50%;height: 450px;background: pink;">
+                        <img src="img_login.jpg" width="100%" height="100%">
+                    </div>
+
+                    <div id="login_box">
+                        <div class="login_info_box float-right p-5" style="width: 50%;height: 450px;">
+                            <p class="text-center font-weight-bold" style="font-size: 140%">Đăng nhập</p>
+                            <label class="font-weight-bold mt-3">Tên đăng nhập</label>
+                            <input id="usernameLogin" type="text" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập tên đăng nhập" style="outline: none;">
+                            <label class="mt-3 font-weight-bold">Mật khẩu</label>
+                            <input id="passwordLogin" type="password" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập mật khẩu">
+                            <button onclick="Login()" class="btn btn-primary mt-4"
+                                style="width: 100%;background: #fb9200;border: 0;outline: none;">Đăng nhập</button>
+                            <p id="statusLogin" class="text-center mt-4" style="font-size: 90%;color: red;"></p>
+                            <p onclick="move_signup()" class="text-center mt-3" style="font-size: 90%">Bạn chưa có tài
+                                khoản, Đăng ký<strong style="color:#fb9200 "> tại đây</strong> </p>
+                        </div>
+                    </div>
+
+
+
+                    <div id="signup_box" style="display: none;">
+                        <div class="signup_info_box float-right p-4 pl-5 pr-5" style="width: 50%;height: 450px;">
+                            <p class="text-center font-weight-bold" style="font-size: 140%">Đăng ký</p>
+                            <label class="font-weight-bold mt-1">Tên đăng nhập</label>
+                            <input id="usernameSignup" type="email" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập tên đăng nhập" style="outline: none;">
+                            <label class="mt-3 font-weight-bold">Mật khẩu</label>
+                            <input id="passwordSignup" type="password" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập mật khẩu">
+                            <label class="mt-3 font-weight-bold">Nhập lại mật khẩu</label>
+                            <input id="RepasswordSignup" type="password" class="form-control"
+                                aria-describedby="emailHelp" placeholder="Nhập lại mật khẩu">
+                            <button onclick="Signup()" class="btn btn-primary mt-4"
+                                style="width: 100%;background: #fb9200;border: 0;outline: none;">
+                                Đăng nhập</button>
+                            <p id="statusSignup" class="text-center mt-3 mb-1" style="font-size: 90%;color: red;"></p>
+                            <p onclick="move_login()" class="text-center mt-0" style="font-size: 90%">Bạn đã có tài
+                                khoản, Đăng nhập<strong style="color:#fb9200 "> tại đây</strong> </p>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <section class="about-sec section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sec-title text-center mb-5">
+                        <p class="sec-sub-title mb-3">About Us</p>
+                        <h2 class="h2-title">Hãy khám phá nhà hàng<span>của chúng tôi</span></h2>
+                        <div class="sec-title-shape mb-4">
+                            <img src="assets/images/title-shape.svg" alt="">
+                        </div>
+                        <p>TYGON FF là một nhà hàng bán thức ăn nhanh, phù hợp với mọi người, đảm bảo các nguyên liệu được chúng tôi đưa vào sử dụng rõ ràng về nguồn gốc 
+                            và chúng tôi luôn đưa chất lượng và trải nghiệm của khách hàng lên hàng đầu. 
+                            Hãy xem một thước phim về sản phẩm của chúng tôi nhé ! 
+                            Có thể bạn sẽ thích thú và lựa chọn chúng tôi để thỏa mãn chiếc bụng đói của bạn đấy !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 m-auto">
+                    <div class="about-video">
+                        <div class="about-video-img" style="background-image: url(assets/images/loader.gif);">
+                        </div>
+                        <div class="play-btn-wp">
+                            <a href="assets/images/KFC Style Fried Chicken Recipe _ How To Make Crispy Fried Chicken At Home (online-video-cutter.com).mp4" data-fancybox="video" class="play-btn">
+                                <i class="uil uil-play"></i>
+
+                            </a>
+                            <span>Watch The Recipe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-col-sec section" style="padding-top: 0px;">
+        <div class="container">
+            <h2 class="h2-title" style="text-align: center;">Một vài điều thú vị về món ăn<span>của nhà hàng nè !</span></h2>
+            <div class="sec-title-shape mb-4" style="text-align: center;">
+                <img src="assets/images/title-shape.svg" alt="">
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="sec-img mt-5">
+                        <img src="assets/images/burger bo.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Burger Bò</h2>
+                        <p>Món burger bò là một món ăn phổ biến và được yêu thích trên toàn thế giới. 
+                            Tại nhà hàng chúng tôi, chúng tôi tự hào giới thiệu đến quý khách món burger bò đậm đà, thơm ngon và đầy đủ dinh dưỡng. 
+                            Chúng tôi sử dụng thịt bò tươi ngon và chế biến bằng phương pháp nướng hoặc chiên giòn để giữ nguyên hương vị và độ giòn của thịt. 
+                            Bên cạnh đó, chúng tôi còn sử dụng các loại rau củ tươi ngon như cà chua, dưa chuột, cải xanh và hành tây 
+                            để tạo nên một món ăn đầy đủ dinh dưỡng và hấp dẫn. Khi thưởng thức món burger 
+                            bò tại nhà hàng của chúng tôi, quý khách sẽ được trải nghiệm hương vị đặc trưng của thịt bò cùng 
+                            với sự tươi ngon và đậm đà của các loại rau củ. Hãy đến và thưởng thức món burger bò tại nhà hàng của 
+                            chúng tôi để có một trải nghiệm ẩm thực tuyệt vời.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-col-sec section pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Burger gà</h2>
+                        <p>Món burger gà tại nhà hàng chúng tôi không chỉ là một món ăn ngon miệng mà còn là một trải nghiệm ẩm thực đầy sáng tạo. 
+                            Chúng tôi sử dụng thịt gà tươi ngon, được chế biến cẩn thận và kết hợp với những loại rau củ tươi mát, 
+                            tạo nên một hòa quyện hương vị độc đáo và hấp dẫn. Mỗi miếng thịt gà được nướng hoặc chiên giòn đều tạo 
+                            nên một lớp vỏ giòn rụm và hương vị đặc trưng. Bên cạnh đó, 
+                            chúng tôi còn có những phiên bản burger gà độc đáo với topping đặc biệt như sốt BBQ, 
+                            phô mai nướng, hay rau diếp và sốt cay. Hãy đến và thưởng thức món burger gà 
+                            tại nhà hàng của chúng tôi để khám phá sự đa dạng và sáng tạo trong cách phục vụ món ăn quen thuộc này. 
+                            Chúng tôi cam kết sẽ mang đến cho quý khách một trải nghiệm ẩm thực thú vị và đầy bất ngờ.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <div class="sec-img">
+                        <img src="assets/images/burger ga.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="two-col-sec section" style="padding-top: 0px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="sec-img mt-5">
+                        <img src="assets/images/garan.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Gà rán</h2>
+                        <p>Món gà rán tại nhà hàng của chúng tôi là một sự kết hợp hoàn hảo giữa thịt gà tươi ngon và lớp vỏ giòn rụm,
+                            tạo nên một trải nghiệm ẩm thực độc đáo và hấp dẫn. Chúng tôi tự hào với việc sử dụng thịt gà chất lượng 
+                            cao, được chế biến cẩn thận và nướng giòn hoặc chiên giòn đều, để giữ nguyên hương vị và độ giòn của thịt.
+                            Mỗi miếng gà rán tại nhà hàng của chúng tôi đều được chế biến theo phương pháp truyền thống kết hợp với 
+                            các loại gia vị đặc trưng, tạo nên hương vị đậm đà và độc đáo. Bên cạnh đó, chúng tôi còn cung cấp các 
+                            loại sốt phong phú và sự kết hợp với rau củ tươi mát để tăng thêm hương vị và dinh dưỡng cho món ăn. Hãy đến và thưởng thức món gà rán tại 
+                            nhà hàng của chúng tôi để trải nghiệm hương vị tuyệt vời và đắm chìm trong không gian ấm cúng và tiện nghi. 
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-col-sec section pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Gà sốt chua ngọt</h2>
+                        <p>Món gà rán sốt chua ngọt tại nhà hàng của chúng tôi là một sự pha trộn tinh tế giữa hương vị giòn rụm của 
+                            gà rán và hương vị ngọt ngào, chua chua của sốt chua ngọt. Thịt gà được chế biến cẩn thận và nướng hoặc 
+                            chiên đều, tạo nên lớp vỏ giòn rụm, giữ nguyên hương vị và độ giòn của thịt. Sốt chua ngọt đặc trưng được 
+                            chế biến từ các nguyên liệu tươi ngon, kết hợp hài hòa giữa hương vị chua của giấm, ngọt ngọt của đường 
+                            và hương thơm của các loại gia vị, 
+                            tạo nên một hòa quyện hương vị đặc sắc và hấp dẫn. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <div class="sec-img">
+                        <img src="assets/images/gasot.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="two-col-sec section" style="padding-top: 0px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="sec-img mt-5">
+                        <img src="assets/images/Untitled Project.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Kem Vani</h2>
+                        <p>Kem vani là một loại kem ngon và phổ biến trên toàn thế giới. Với hương vị ngọt ngào, 
+                            thơm ngon và màu vàng nhạt đặc trưng, kem vani đã trở thành một trong những loại kem được ưa chuộng nhất. 
+                            Hương vị vani tinh tế và độ béo ngậy của kem tạo nên sự kết hợp hoàn hảo, 
+                            làm hài lòng cả những thực khách khó tính nhất.</p>
+                        <p>Tại nhà hàng của chúng tôi, chúng tôi tự hào giới thiệu đến quý khách hàng hương vị tuyệt vời của kem vani.
+                            Kem được chế biến từ nguyên liệu tươi ngon, kết hợp với kỹ thuật chế biến hiện đại, 
+                            tạo ra lớp kem mịn màng, ngậy ngon và hương vị vani đặc trưng. </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-col-sec section pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="sec-text">
+                        <h2 class="xxl-title">Coca Cola</h2>
+                        <p>Coca Cola chắc không còn xa lạ gì với các bạn nữa nhỉ. Hãy để bữa ăn của bạn hoàn hảo hơn với 1 lon Coca lạnh nhé.
+                            Chúng tôi cam kết Coca được nhập khẩu từ nhà máy nên các bạn cứ yên tâm thêm vào thực đơn của mình nha !
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1">
+                    <div class="sec-img">
+                        <img src="assets/images/coca.jpg" alt="" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <script src="index.js"></script>
+    <!-- jquery  -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <!-- fontawesome  -->
+    <script src="assets/js/font-awesome.min.js"></script>
+
+    <!-- swiper slider  -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- mixitup -- filter  -->
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+
+    <!-- fancy box  -->
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+
+    <!-- parallax  -->
+    <script src="assets/js/parallax.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="assets/js/gsap.min.js"></script>
+
+    <!-- scroll trigger  -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- scroll to plugin  -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- rellax  -->
+    <script src="assets/js/rellax.min.js"></script>
+    <script src="assets/js/rellax-custom.js"></script>
+    <!-- smooth scroll  -->
+    <script src="assets/js/smooth-scroll.js"></script>
+    <!-- custom js  -->
+    <script src="index.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>

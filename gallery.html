@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-image: url(assets/images/menu-bg.png);">
+    <!-- start of header  -->
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="logo.png" width="160" height="36" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="main-navigation">
+                        <button class="menu-toggle"><span></span><span></span></button>
+                        <nav class="header-menu">
+                            <ul class="menu food-nav-menu">
+                                <li><a href="../WEBLON/index2.html">Trang chủ</a></li>
+                                <li><a href="../WEBLON/about.html">Giới thiệu</a></li>
+                                <li><a href="../WEBLON/index3.html">Menu</a></li>
+                                <li><a href="../WEBLON/gallery.html">Bộ sưu tập</a></li>
+                                <li><a href="../WEBLON/blog.html">Blog</a></li>
+                                <li><a href="../WEBLON/contact.html">Liên hệ</a></li>
+                                <li><a href="../WEBLON/members.html">Members</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-right">
+                            <form action="#" class="header-search-form for-des">
+                                <input type="search" class="form-input" placeholder="Tìm kiếm...">
+                                <button type="submit">
+                                    <i class="uil uil-search"></i>
+                                </button>
+                            </form>
+                            <a href="../WEBLON/index4.html" class="header-btn header-cart">
+                                <i class="uil uil-shopping-bag"></i>
+                                <span class="cart-number">0</span>
+                            </a>
+                            <a href="javascript:void(0)" class="header-btn">
+                                <i class="uil uil-user-md" data-toggle="modal" data-target="#myModal"></i>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="modal fade login mt-5 " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content ">
+                <div class="cart_box" style="width: 100%;margin: auto;">
+                    <div class="login_img_box float-left" style="width: 50%;height: 450px;background: pink;">
+                        <img src="img_login.jpg" width="100%" height="100%">
+                    </div>
+
+                    <div id="login_box">
+                        <div class="login_info_box float-right p-5" style="width: 50%;height: 450px;">
+                            <p class="text-center font-weight-bold" style="font-size: 140%">Đăng nhập</p>
+                            <label class="font-weight-bold mt-3">Tên đăng nhập</label>
+                            <input id="usernameLogin" type="text" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập tên đăng nhập" style="outline: none;">
+                            <label class="mt-3 font-weight-bold">Mật khẩu</label>
+                            <input id="passwordLogin" type="password" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập mật khẩu">
+                            <button onclick="Login()" class="btn btn-primary mt-4"
+                                style="width: 100%;background: #fb9200;border: 0;outline: none;">Đăng nhập</button>
+                            <p id="statusLogin" class="text-center mt-4" style="font-size: 90%;color: red;"></p>
+                            <p onclick="move_signup()" class="text-center mt-3" style="font-size: 90%">Bạn chưa có tài
+                                khoản, Đăng ký<strong style="color:#fb9200 "> tại đây</strong> </p>
+                        </div>
+                    </div>
+
+
+
+                    <div id="signup_box" style="display: none;">
+                        <div class="signup_info_box float-right p-4 pl-5 pr-5" style="width: 50%;height: 450px;">
+                            <p class="text-center font-weight-bold" style="font-size: 140%">Đăng ký</p>
+                            <label class="font-weight-bold mt-1">Tên đăng nhập</label>
+                            <input id="usernameSignup" type="email" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập tên đăng nhập" style="outline: none;">
+                            <label class="mt-3 font-weight-bold">Mật khẩu</label>
+                            <input id="passwordSignup" type="password" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nhập mật khẩu">
+                            <label class="mt-3 font-weight-bold">Nhập lại mật khẩu</label>
+                            <input id="RepasswordSignup" type="password" class="form-control"
+                                aria-describedby="emailHelp" placeholder="Nhập lại mật khẩu">
+                            <button onclick="Signup()" class="btn btn-primary mt-4"
+                                style="width: 100%;background: #fb9200;border: 0;outline: none;">
+                                Đăng nhập</button>
+                            <p id="statusSignup" class="text-center mt-3 mb-1" style="font-size: 90%;color: red;"></p>
+                            <p onclick="move_login()" class="text-center mt-0" style="font-size: 90%">Bạn đã có tài
+                                khoản, Đăng nhập<strong style="color:#fb9200 "> tại đây</strong> </p>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="gallery">
+        <div class="col-lg-10 m-auto">
+            <div style="display: flex;justify-content: center; margin-bottom: 40px;">
+            <h2 class="h2-title">Bộ sưu tập</h2>
+        </div>
+            <div class="book-table-img-slider" id="icon">
+                <div class="swiper-wrapper">
+                    <a href="assets/images/burger1.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper.jpg)"></a>
+                    <a href="assets/images/burger5.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper1.jpg)"></a>
+                    <a href="assets/images/burger2.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper2.jpg)"></a>
+                    <a href="assets/images/coca.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper3.jpg)"></a>
+                    <a href="assets/images/burger3.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper4.jpg)"></a>
+                    <a href="assets/images/burger4.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper5.jpg)"></a>
+
+                    <a href="assets/images/coca2.jpg" data-fancybox="table-slider"
+                        class="book-table-img back-img swiper-slide"
+                        style="background-image: url(assets/images/blog2/wallpaperflare.com_wallpaper6.jpg)"></a>s
+                </div>
+
+                <div class="swiper-button-wp">
+                    <div class="swiper-button-prev swiper-button">
+                        <i class="uil uil-angle-left"></i>
+                    </div>
+                    <div class="swiper-button-next swiper-button">
+                        <i class="uil uil-angle-right"></i>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+    </section>
+
+    <section class="our-team section">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3">Đội ngũ</p>
+                            <h2 class="h2-title">Đầu bếp</h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="assets/images/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row team-slider">
+                    <div class="swiper-wrapper">
+                        <div class="col-lg-4 swiper-slide">
+                            <div class="team-box text-center">
+                                <div style="background-image: url(assets/images/uyen1.jpg);"
+                                    class="team-img back-img">
+
+                                </div>
+                                <h3 class="h3-title">Nguyễn Võ Tú Uyên</h3>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="uil uil-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-youtube"></i>
+                                            </a>
+                                        </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 swiper-slide">
+                            <div class="team-box text-center">
+                                <div style="background-image: url(assets/images/nhaquyen1.jpg);"
+                                    class="team-img back-img">
+
+                                </div>
+                                <h3 class="h3-title">Võ Hoàng Nhã Quyên</h3>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="uil uil-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-youtube"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 swiper-slide">
+                            <div class="team-box text-center">
+                                <div style="background-image: url(assets/images/anne.jpg);"
+                                    class="team-img back-img">
+
+                                </div>
+                                <h3 class="h3-title">Anne Hathaway</h3>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="uil uil-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-youtube"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 swiper-slide">
+                            <div class="team-box text-center">
+                                <div style="background-image: url(assets/images/gorden.jpg);"
+                                    class="team-img back-img">
+
+                                </div>
+                                <h3 class="h3-title">Gorden Ramsay</h3>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="uil uil-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="uil uil-youtube"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-wp">
+                        <div class="swiper-button-prev swiper-button">
+                            <i class="uil uil-angle-left"></i>
+                        </div>
+                        <div class="swiper-button-next swiper-button">
+                            <i class="uil uil-angle-right"></i>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials section bg-light">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3">Review</p>
+                            <h2 class="h2-title">Đánh giá của <span> khách hàng</span></h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="assets/images/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="testimonials-img">
+                            <img src="assets/images/testimonial-img.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(assets/images/testimonials/rol.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:85%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            anh Rô Nan Đô
+                                        </h3>
+                                        <p>Phục vụ nhanh, shiper thân thiện, hams dùng thịt kobe hảo hạng, nhưng có một điểm yếu là hơi mặn. Tại mặn mà a thua WC</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(assets/images/testimonials/taylor.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:80%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            chị Tay Lỏ
+                                        </h3>
+                                        <p>Đồ ăn bày trí bắt mắt, hợp khẩu vị người miền Nam. Chị miền Bắc (y) trừ 1 sao</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(assets/images/testimonials/chikim.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:89%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            chị Kim Siu Zà Bong
+                                        </h3>
+                                        <p>Ngon! con tui ăn khen quá trời, giá ổn, hợp túi tiền học sinh Rmit, rcm cả nhà nhé</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(assets/images/testimonials/messi.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:100%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            anh Messi Yêu Vợ
+                                        </h3>
+                                        <p>Coca tươi nên uống rất đầm vị,ăn chung với gà sốt HS bao hợp nha cả nhà yêu của kem. Nhờ ăn gà ở đây mà anh thắng WC, chicken win kkk</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-sec section-repeat-img" style="background-image: url(assets/images/faq-bg.png);">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3" style="margin-top: 30px;">Q&A</p>
+                            <h2 class="h2-title">Câu hỏi<span> thường gặp</span></h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="assets/images/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-row">
+                    <div class="faq-box">
+                        <h4 class="h4-title">Quán mở cửa vào khung giờ nào?</h4>
+                        <p>Xem phần liên hệ nha khách iu. Tụi em thuê người code hẳn nguyên cái trang thông tin liên hệ có ngày giờ mở cửa đồ đó, xem dùm em nha!</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Ăn không ngon có được hoàn tiền không ní?</h4>
+                        <p>Mẹ chị đẻ chị ra rồi chị lì mẹ chị có được hoàn trả về chổ cũ không? Hay hỏi quá ní. Hông bé ơi!</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Bao lâu thì đồ ăn được giao tới tận nơi?</h4>
+                        <p>Tùy thuộc vào vị trí sinh sống của hộ gia đình mình ạ. Nếu gần thì 30p nếu xa thì tìm quán nào gần nhà ăn dùm em</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Bên mình có bán đồ chay không sốp ơi?</h4>
+                        <p>Không chị iu ơi, bên em bán đồ ăn nhanh có hại cho sức khỏe chứ không bán đồ ăn heo thì, next!</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Phí ship giao nội thành bao nhiêu nhỉ</h4>
+                        <p>Giao nội thành 30k ạ. Còn ngoại thành thì ăn tiệm khác giúp em nha, tại giao mắc lắm. Thenkju darling</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Làm sao để trở thành thành viên vip của sốp nhỉ?</h4>
+                        <p>Bạn nuôi chủ quán cả đời để nó khỏi phải đi làm là bạn thành thành viên cực kì víp nha!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- jquery  -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <!-- fontawesome  -->
+    <script src="assets/js/font-awesome.min.js"></script>
+
+    <!-- swiper slider  -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- mixitup -- filter  -->
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+
+    <!-- fancy box  -->
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+
+    <!-- parallax  -->
+    <script src="assets/js/parallax.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="assets/js/gsap.min.js"></script>
+
+    <!-- scroll trigger  -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- scroll to plugin  -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- rellax  -->
+    <script src="assets/js/rellax.min.js"></script>
+    <script src="assets/js/rellax-custom.js"></script>
+    <!-- smooth scroll  -->
+    <script src="assets/js/smooth-scroll.js"></script>
+    <!-- custom js  -->
+    <script src="index.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
